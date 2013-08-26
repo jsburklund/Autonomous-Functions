@@ -20,7 +20,7 @@ void turnRightHeading(int speed, int angle);
 void driveBackward(int speed);
 void driveForward(int speed);
 void driveForwardFeet(int dist);
-void displayMenu(array menuItems);
+byte displayMenu(array menuItems);
 
 void resetGyro();
 void calibrateGyro();
@@ -81,7 +81,28 @@ void driveForwardFeet(int speed, int dist) { //TOTEST
     stopDriving();
 }
 
+void driveBackward(int speed) { //TODO
+    //add motor defs here
+}
 
+byte displayMenu(array menuItems) { //TODO
+    //add code to display a set list of items
+}
+
+
+void restGyro() { //TOTEST
+    gyroHeading = 0;
+}
+
+void calibrateGyro() { //TODO
+    //add code to grab gyro values over a set period of time
+}
+
+void initializeGyro() { //TODO
+    restGyro();
+    calibrateGyro();
+    StartTask[gyroHeading];
+}
 
 task gyroHeading() { //TODO
     //continuously integrate the output value of the gyro to obtain the current heading
